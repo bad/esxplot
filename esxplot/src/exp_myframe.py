@@ -453,7 +453,7 @@ class MyFrame(esxp_gui.EsxPlotFrame):
                              style = wx.FD_SAVE|wx.FD_OVERWRITE_PROMPT )
         if dlg.ShowModal() == wx.ID_OK:
             filename=dlg.GetFilename()
-            dirname=dlg.os.path.dirname(dlg.GetPath())
+            dirname=os.path.dirname(dlg.GetPath())
             self.exp_column_dir = dirname
             dlg.Destroy()
             if filename != '':
