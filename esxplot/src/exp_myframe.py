@@ -359,7 +359,7 @@ class MyFrame(esxp_gui.EsxPlotFrame):
 
         if dlg.ShowModal()==wx.ID_OK:
             self.filename=dlg.GetFilename()
-            self.dirname=dlg.GetDirectory()
+            self.dirname=os.path.dirname(dlg.GetPath())
             dlg.Destroy()
 
         if self.filename != '':
@@ -406,7 +406,7 @@ class MyFrame(esxp_gui.EsxPlotFrame):
 
         if dlg.ShowModal()==wx.ID_OK:
             filename=dlg.GetFilename()
-            dirname=dlg.GetDirectory()
+            dirname=os.path.dirname(dlg.GetPath())
             dlg.Destroy()
 
         if filename != '':
@@ -453,7 +453,7 @@ class MyFrame(esxp_gui.EsxPlotFrame):
                              style = wx.FD_SAVE|wx.FD_OVERWRITE_PROMPT )
         if dlg.ShowModal() == wx.ID_OK:
             filename=dlg.GetFilename()
-            dirname=dlg.GetDirectory()
+            dirname=dlg.os.path.dirname(dlg.GetPath())
             self.exp_column_dir = dirname
             dlg.Destroy()
             if filename != '':
@@ -515,7 +515,7 @@ class MyFrame(esxp_gui.EsxPlotFrame):
         dlg = wx.FileDialog ( None, style = wx.OPEN )
         if dlg.ShowModal() == wx.ID_OK:
             filename=dlg.GetFilename()
-            dirname=dlg.GetDirectory()
+            dirname=os.path.dirname(dlg.GetPath())
             dlg.Destroy()
             if filename != '':
                 fpath = dirname+'/'+filename
