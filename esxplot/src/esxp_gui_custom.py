@@ -123,9 +123,7 @@ class MyTreeCtrl(wx.TreeCtrl): ### candidate for refactoring for 1.1
         """
         res = []
         chlditem = self.GetFirstChild(item)[0]
-        if chlditem.IsOk():
-            res.extend(self.MyTreeLeafList(chlditem))
-        else:
+        if not chlditem.IsOk():
             return [item]
         while chlditem.IsOk() :
             res.extend(self.MyTreeLeafList(chlditem))
